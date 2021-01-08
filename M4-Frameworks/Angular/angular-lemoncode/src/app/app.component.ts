@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-lemoncode';
+  precio = 250;
+  iva = 24;
+
+  constructor() {
+    setTimeout(() => {
+      this.precio = 257;
+    }, 3000);
+  }
+
+  precioTotal() {
+    return this.precio + this.iva;
+  }
 }
