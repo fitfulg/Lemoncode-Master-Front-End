@@ -1,4 +1,35 @@
-header {
-    padding: 25px;
-    background-color: lightcoral;
+@import 'red';
+// @import 'blue';
+
+div {
+    width: 6rem;
+    height: 4rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    margin: 2px 50px;
+    border: 1px solid gray;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  p{
+    margin-left: 50px;
+  }
+
+
+.principal-font {  
+    font-family: sans-serif;
+}
+.secondary-font {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+.base {
+  background-color: $theme;
+}
+
+.important {
+  background-color: darken($theme, 30);
+}
+
+.warning {
+  background-color: lighten($theme, 30);
 }
