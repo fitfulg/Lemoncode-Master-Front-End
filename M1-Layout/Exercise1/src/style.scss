@@ -1,0 +1,61 @@
+@import "_mixins";
+
+$red: rgb(244,67,54);
+$blue: rgb(63,81,181);
+$green: rgb(76,175,80);
+
+body {
+  @include bodybuilder;
+}
+
+.box {
+  @include boxbuilder
+}
+
+.container-1 {
+  .base-color {
+    background-color: $red;
+  }
+  @for $i from 1 through 4 {
+  .lighten-#{$i} {
+    background-color: lighten($red, 5% * $i);
+  }
+   @for $i from 1 through 4 {
+  .darken-#{$i} {
+    background-color: darken($red, + 5% * $i);
+  }
+}
+}
+}
+
+.container-2 {
+  .base-color {
+    background-color: $blue;
+  }
+  @for $i from 1 through 4 {
+  .lighten-#{$i} {
+    background-color: lighten($blue, 5% * $i);
+  }
+   @for $i from 1 through 4 {
+  .darken-#{$i} {
+    background-color: darken($blue, 5% * $i);
+  }
+}
+  }
+} 
+
+.container-3 {
+  .base-color {
+    background-color: $green;
+  }
+  @for $i from 1 through 4 {
+  .lighten-#{$i} {
+    background-color: lighten($green, 5% * $i);
+  }
+   @for $i from 1 through 4 {
+  .darken-#{$i} {
+    background-color: darken($green, 5% * $i);
+  }
+}
+  }
+} 

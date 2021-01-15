@@ -1,0 +1,17 @@
+@mixin bodybuilder {
+    .container-1, .container-2, .container-3 {
+        display: flex;
+      } 
+  }
+  
+
+ @mixin boxbuilder {
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+     align-items: center;
+    width: 100px;
+    height: 100px;
+    color: white;
+    margin: 10px;
+  }
