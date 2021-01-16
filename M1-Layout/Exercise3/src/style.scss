@@ -1,4 +1,35 @@
-header {
-    padding: 25px;
-    background-color: lightcoral;
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    background-color: #006A7B;
+    color: white
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+}
+
+div:hover {
+    background-color: #2F4858;
+}
+
+@media screen and (max-width:768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    div {
+        height: 4.5rem;
+        width: 100%;
+    }
 }
