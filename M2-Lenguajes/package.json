@@ -1,14 +1,14 @@
 {
-  "name": "m2-lenguajes",
-  "version": "1.0.0",
-  "description": "modulo 2",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Eric",
-  "license": "ISC",
-  "dependencies": {
-    "nodemon": "^2.0.7"
-  }
+    "name": "m2-lenguajes",
+    "version": "1.0.0",
+    "description": "modulo 2",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Eric",
+    "license": "ISC",
+    "dependencies": {
+        "nodemon": "^2.0.7"
+    }
 }
