@@ -1,0 +1,39 @@
+.shadow {
+  -webkit-box-shadow: -10px 10px 18px black;
+          box-shadow: -10px 10px 18px black;
+}
+
+div {
+  width: 6rem;
+  height: 4rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  margin: 2px 50px;
+  border: 1px solid gray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  margin-left: 50px;
+}
+
+.principal-font {
+  font-family: sans-serif;
+}
+
+.secondary-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.base {
+  background-color: red;
+}
+
+.important {
+  background-color: #660000;
+}
+
+.warning {
+  background-color: #ff9999;
+}
+/*# sourceMappingURL=style.css.map */
