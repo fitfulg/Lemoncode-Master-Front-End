@@ -1,46 +1,47 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const path = require('path')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path"); //este concatena las paths
 
 const basePath = __dirname;
 
 module.exports = {
-    context: path.join(basePath, 'src'),
+    context: path.join(basePath, "src"),
     resolve: {
-        extensions: [".js", ".ts", ".tsx"]
+        extensions: [".js",".ts"]
     },
-    stats: "errors-only",
     entry: {
-        app: ['./index.ts'],
+        app: './main.ts',
         appStyles: [
-            './mystyles.scss',
+        './styles.scss',
         ],
     },
     output: {
-        filename: '[name].[chunkhash].js',
-        path: path.resolve(process.cwd(), 'dist'),
+        filename: "[name].[chunkhash].js",
+        path: path.resolve(process.cwd(), "dist"),
+        publicPath: "/",
     },
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                loader: "babel-loader",
             },
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            implementation: require("sass")
-                        }
+                  MiniCssExtractPlugin.loader,
+                  "css-loader",
+                  {
+                    loader: "sass-loader",
+                    options: {
+                      implementation: require("sass"),
                     },
-                ]
-            },
+                  },
+                ],
+              },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
@@ -49,16 +50,25 @@ module.exports = {
                     "css-loader"
                 ]
             },
+            {
+                test: /\.(png|jpg)$/,
+                type: "asset/resource",
+              },
+              {
+                test: /\.html$/,
+                loader: "html-loader",
+              },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
+            filename: "index.html", // nombre en dist
+            template: "index.html", // nombre en el src
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
+        new CleanWebpackPlugin()
     ],
-}
+};
