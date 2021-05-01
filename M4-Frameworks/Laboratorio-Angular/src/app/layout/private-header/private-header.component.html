@@ -5,12 +5,13 @@
             <mat-icon>menu</mat-icon>
           </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item>Dashboard</button>
-                <button mat-menu-item>Crud</button>
-                <button mat-menu-item>Gallery</button>
-                <button mat-menu-item>Profile</button>
+                <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+                <button mat-menu-item routerLink="/crud">Crud</button>
+                <button mat-menu-item routerLink="/gallery">Gallery</button>
+                <button mat-menu-item routerLink="/profile">Profile</button>
             </mat-menu>
-            <span>&nbsp;&nbsp;Dashboard</span>
+            <img src="../../../assets/logo_transparent.png" alt="logo">
+            <span>&nbsp;&nbsp;Private Zone</span>
             <span class="example-spacer"></span>
         </mat-toolbar>
     </p>

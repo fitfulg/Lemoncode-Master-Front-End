@@ -15,11 +15,18 @@ import { PublicHeaderComponent } from './layout/public-header/public-header.comp
 import { FooterComponent } from './layout/footer/footer.component';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
 import { PrivateHeaderComponent } from './layout/private-header/private-header.component';
+import { LoginComponent } from './pages/public/login/login.component';
+import { AboutComponent } from './pages/public/about/about.component';
+import { CrudComponent } from './pages/private/crud/crud.component';
+import { GalleryComponent } from './pages/private/gallery/gallery.component';
+import { ProfileComponent } from './pages/private/profile/profile.component';
 
 // Material
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -27,11 +34,17 @@ import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DashboardComponent,
     PublicHeaderComponent,
     PrivateHeaderComponent,
-    FooterComponent  
+    FooterComponent,  
+    HomeComponent,
+    LoginComponent,
+    AboutComponent,
+    DashboardComponent,
+    CrudComponent,
+    GalleryComponent,
+    ProfileComponent
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +54,8 @@ import {MatIconModule} from '@angular/material/icon';
     LayoutModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
