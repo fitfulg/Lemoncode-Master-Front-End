@@ -4,5 +4,10 @@ img {
 }
 
 .example-spacer {
-    flex: 1 1 auto;
+    left: 0;
+    bottom: 0;
+}
+
+.mat-toolbar {
+    position: relative;
 }

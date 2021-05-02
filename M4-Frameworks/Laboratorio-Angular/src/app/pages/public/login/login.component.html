@@ -1,4 +1,45 @@
 <!-- # Public zone #-->
 <!-- header -->
 <app-public-header></app-public-header>
-login works!
+
+<div>
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="master8@lemoncode.net" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="12345678" required>
+    </mat-form-field> -->
+
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <p>
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input type="text" matInput placeholder="master8@lemoncode.net" formControlName="username" required>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field>
+                        <mat-label>Contraseña</mat-label>
+                        <input type="password" matInput placeholder="12345678" formControlName="password" required>
+                    </mat-form-field>
+                </p>
+
+                <p *ngIf="error" class="error">
+                    {{ error }}
+                </p>
+
+                <div class="button">
+                    <button type="submit" mat-button>Login</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
