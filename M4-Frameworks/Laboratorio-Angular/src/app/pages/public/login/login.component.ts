@@ -1,5 +1,6 @@
 import { Input, Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,29 +9,41 @@ import { FormGroup, FormControl} from '@angular/forms';
 })
 export class LoginComponent{
 
-  hide = true;
+  private user: string = '';
+  private password: string = '';
+  private error: string = '';
 
-  // email = new FormControl('', [Validators.required, Validators.email]);
+  constructor(private authService: AuthService, 
+              private router: Router) {}
 
-  // getErrorMessage() {
-  //   if (this.email.hasError('required')) {
-  //     return 'Campo incompleto';
-  //   }
+  public get User() : string {
+    return this.user;
+  }
+  public set User(value: string) {
+    this.user = value;
+  }
 
-  //   return this.email.hasError('email') ? 'Not a valid email' : '';
-  // }
+  public get Password() : string {
+    return this.password;
+  }
+  public set Password(value: string) {
+    this.password = value;
+  }
 
-  @Output() submitEM = new EventEmitter();
-  @Input() error: string | null;
-
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
+  public get submitError() : string {
+    return this.error;
+  }
+  public set submitError(value: string) {
+    this.error = value;
+  }
 
   submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
+    const loginSucess = this.authService.login(this.user, this.password);
+    if (loginSucess) {
+      this.router.navigate(['/dashboard']);
+    }
+    else {
+      this.error = 'Usuario y/o contraseña no válidos.';
     }
   }
 

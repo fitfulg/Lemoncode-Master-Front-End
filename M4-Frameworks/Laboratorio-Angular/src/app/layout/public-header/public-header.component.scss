@@ -4,10 +4,19 @@ img {
 }
 
 .example-spacer {
-    left: 0;
-    bottom: 0;
+    flex: 1 1 auto;
 }
 
 .mat-toolbar {
     position: relative;
+}
+
+.mat-menu {
+    background-color: transparent !important;
+    border: 0px;
+}
+
+button {
+    background-color: transparent;
+    border: 0px;
 }
