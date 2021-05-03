@@ -1,0 +1,57 @@
+<!-- # Public zone #-->
+<!-- header -->
+<app-public-header></app-public-header>
+
+<div class="container">
+
+
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+
+            <form #loginForm="ngForm">
+            
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input type="text" matInput 
+                               placeholder="master8@lemoncode.net" 
+                               name="usuario"
+                               [(ngModel)]="User"
+                               #user="ngModel"
+                               required>
+                        <mat-error *ngIf="user.errors?.required">
+                        User is required!
+                        </mat-error>
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                        <mat-label>Contraseña</mat-label>
+                        <input type="password" matInput 
+                               placeholder="12345678" 
+                               name="password" 
+                               [(ngModel)]="Password"
+                               #password="ngModel"
+                               required>
+                        <mat-error *ngIf="password.errors?.required">
+                        Password is required!
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                <div class="button">
+                    <button mat-stroked-button 
+                            type="submit" mat-button  
+                            (click)="submit()">Login
+                    </button>
+                </div>
+                <br>
+                <div *ngIf="submitError" class="error">
+                    <mat-error>
+                      {{ submitError }}
+                    </mat-error>
+                  </div>
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>

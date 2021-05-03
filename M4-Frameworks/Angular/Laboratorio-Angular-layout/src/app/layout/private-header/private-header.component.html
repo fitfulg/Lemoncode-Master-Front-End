@@ -1,0 +1,23 @@
+<nav>
+    <p>
+        <mat-toolbar color="primary">
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+                <button mat-menu-item routerLink="/crud">Crud</button>
+                <button mat-menu-item routerLink="/gallery">Gallery</button>
+                <button mat-menu-item routerLink="/profile">Profile</button>
+            </mat-menu>
+            <img src="./assets/logo_transparent.png" alt="logo">
+            <span>&nbsp;&nbsp;Private Zone</span>
+            <span class="example-spacer"></span>
+            <span>Hola {{ userName }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <button mat-icon-button (click)="salir()">
+                <mat-icon class="logout">power_settings_new</mat-icon>
+              </button>
+        </mat-toolbar>
+    </p>
+
+</nav>

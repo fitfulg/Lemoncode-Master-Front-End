@@ -1,0 +1,14 @@
+.mat-toolbar {
+    display: flex;
+    justify-content: center;
+    background-color: #C2185B;
+    height: 55px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: medium;
+    color: white;
+    div {
+        margin-top: 0.3em;
+    }
+}
