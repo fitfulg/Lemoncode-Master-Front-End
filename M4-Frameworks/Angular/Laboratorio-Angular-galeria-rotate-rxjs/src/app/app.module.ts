@@ -29,6 +29,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { RotateDirective } from './directives/rotate.directive';
+import { KeypadGalleryComponent } from './components/keypad-gallery/keypad-gallery.component';
+import { CarouselGalleryComponent } from './components/carousel-gallery/carousel-gallery.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import {MatButtonModule} from '@angular/material/button';
     DashboardComponent,
     CrudComponent,
     GalleryComponent,
-    ProfileComponent
+    ProfileComponent,
+    RotateDirective,
+    KeypadGalleryComponent,
+    CarouselGalleryComponent
 
   ],
   imports: [
