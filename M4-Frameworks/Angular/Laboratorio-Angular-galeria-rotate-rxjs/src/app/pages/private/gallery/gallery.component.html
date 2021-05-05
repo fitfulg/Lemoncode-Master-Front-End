@@ -3,13 +3,20 @@
 <app-private-header></app-private-header>
 
 <div class="gallery-container">
-    <span class="titulo">Galeria</span>
 
     <div class="img-contaienr">
+        <h1>{{Imagenes[this.ImagenSeleccionada].title}}</h1>
+
+        <img [src]="Imagenes[this.ImagenSeleccionada].src"    
+             [width]="imageWidth">
     </div>
 
 
 <app-keypad-gallery>
+    [imagenes]="Imagenes"
+    [(imagenSeleccionada)]="ImagenSeleccionada"
+    (aumentar)="aumentarImagen()"
+    (disminuir)="disminuirImagen()"
 </app-keypad-gallery>
 
 <app-carousel-gallery>

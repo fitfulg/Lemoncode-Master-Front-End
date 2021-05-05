@@ -4,10 +4,10 @@ import { Image } from '../interfaces/image';
 @Injectable({
   providedIn: 'root'
 })
-export class GaleriaService {
+export class GalleryService {
   constructor() { }
 
-  public obtenerImagenes() : Promise<Image[]> {
+  public getImages() : Promise<Image[]> {
     return Promise.resolve([
       {
         id: 1,
