@@ -1,0 +1,37 @@
+<!-- # Private zone #-->
+<!-- header -->
+<app-private-header></app-private-header>
+
+<div class="container">
+    <div class="currentPicture" [style.transform]="getStyle()">
+      <img src="{{ getCurrentPicture().src }}" alt="{{ getCurrentPicture().title }}">
+      <div class="title">{{ getCurrentPicture().title }}</div>
+    </div>
+    <div class="controls">
+      <button mat-flat-button color="primary" (click)="previous()" disabled="{{ isStart() }}">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <button mat-flat-button color="primary" (click)="next()" disabled="{{ isEnd() }}">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+      <button mat-flat-button color="primary" (click)="increase()" disabled="{{ biggestSize }}">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-flat-button color="primary" (click)="decrease()" disabled="{{ smallestSize }}">
+        <mat-icon>remove</mat-icon>
+      </button>
+      <button mat-flat-button color="primary" (click)="rotate($event)">
+        <mat-icon>rotate_right</mat-icon>
+      </button>
+      <button mat-flat-button color="primary" (click)="play()" *ngIf="!isPlaying()">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button mat-flat-button color="primary" (click)="stop()" *ngIf="isPlaying()">
+        <mat-icon>pause</mat-icon>
+      </button>
+    </div>
+    <app-keypad-gallery
+      [galleryService]="getGalleryService()"
+    ></app-keypad-gallery>
+  </div>
+  
