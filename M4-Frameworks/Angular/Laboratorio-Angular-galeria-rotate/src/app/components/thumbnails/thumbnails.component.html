@@ -1,0 +1,9 @@
+<div>
+    <ul class="thumbnails">
+      <li *ngFor="let thumbnail of list(); let i = index">
+        <img src="{{ thumbnail.src }}" alt="{{ thumbnail.title }}" title="{{ thumbnail.title }}"  (click)="setCurrentPicture(i)">
+      </li>
+    </ul>
+ 
+  </div>
+  

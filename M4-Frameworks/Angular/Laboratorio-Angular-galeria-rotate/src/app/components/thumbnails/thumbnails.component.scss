@@ -1,0 +1,28 @@
+div {
+  margin-top: 10rem;
+  margin-left: 23%;
+  ul {
+    display: flex;
+    list-style-type: none;   
+    img {
+       min-width: 50px !important;
+       height: 90px;
+    }
+   }
+}
+
+    
+
+  .thumbnails {
+    cursor: pointer;
+    filter: saturate(0%);
+    height: auto;
+    padding-right: 2px;
+    transition: filter 0.3s ease-in-out;
+    width: 100px;
+  }
+
+ 
+  
+
+ 

@@ -7,15 +7,15 @@ import fotos from '../../assets/fotos.json';
 })
 export class GalleryService {
 
-  private pictures: Image[]
+  private pics: Image[]
   private current!: Image;
 
   constructor() {
-    this.pictures = fotos;
+    this.pics = fotos;
   }
 
   list(): Image[] {
-    return [...this.pictures]
+    return [...this.pics]
   }
 
   getCurrentPicture(): Image {
@@ -23,7 +23,7 @@ export class GalleryService {
   }
 
   setCurrentPicture(index: number): void {
-    this.current = this.pictures[index]
+    this.current = this.pics[index]
   }
   
 }
