@@ -1,3 +1,4 @@
+// En este ejemplo vamos a ver como liberar recursos cuando desmontamos un componente del DOM.
 import React from "react";
 
 export const MyComponent = () => {

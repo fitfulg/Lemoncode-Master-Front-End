@@ -1,3 +1,5 @@
+// Hay veces en las que nos hace falta hilar fino y sólo voler a 
+// repintar un componente si sus propiedades han cambiado.
 import React from "react";
 
 export const MyComponent = () => {
