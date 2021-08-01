@@ -19,19 +19,22 @@ export const MyComponent = () => {
   //se renderiza todo mediante ambos imputs
   // const resetNameCallback = () => {
   //   setUsername("");
+  //   setLastname("");
   // };
   
     // parecido a useEffect 
     //solo se renderiza mediante lastname
-  // const resetNameCallback = React.useCallback( () => {
-  //   setUsername("");
-  // }, [lastname]);
+  const resetNameCallback = React.useCallback( () => {
+    setUsername("");
+    setLastname("");
+  }, [lastname]);
 
    // parecido a useEffect 
    //no se renderiza ninguno
-   const resetNameCallback = React.useCallback( () => {
-    setUsername("");
-  }, []);
+  //  const resetNameCallback = React.useCallback( () => {
+  //   setUsername("");
+  //   setLastname("");
+  // }, []);
 
 
   return (

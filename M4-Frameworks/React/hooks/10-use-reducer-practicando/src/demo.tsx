@@ -52,6 +52,21 @@ const EditUsername: React.FC<Props> = React.memo((props) => {
   );
 });
 
+// const EditUserSurname: React.FC<Props> = React.memo((props) => {
+//   console.log(
+//     "Hey I'm only rerendered when name gets updated, check React.memo"
+//   );
+
+//   return (
+//     <input
+//       value={props.name}
+//       onChange={(e) =>
+//         props.dispatch({ type: actionIds.setLastname, payload: e.target.value })
+//       }
+//     />
+//   );
+// });
+
 export const MyComponent = () => {
   const [userInfo, dispatch] = React.useReducer(userInfoReducer, {
     name: "John",
@@ -67,6 +82,10 @@ export const MyComponent = () => {
         name={userInfo.name}
         dispatch={dispatch}
       />
+      {/* <EditUserSurname
+        name={userInfo.lastname}
+        dispatch={dispatch}
+      /> */}
       <input
         value={userInfo.lastname}
         onChange={(e) =>

@@ -25,6 +25,7 @@ export const MyComponent = () => {
     fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
       .then((response) => response.json())
       .then((data) => setUserCollection(data));
+      console.log(userCollection);
   }, [debouncedFilter]);
 
   return (

@@ -7,15 +7,28 @@ export const MyComponent = () => {
 
   React.useEffect(() => {
     setTimeout(() => {
-      console.log(seconds);
       setSeconds(1);
       secondsRef.current = 1;
     }, 1000);
 
     setTimeout(() => {
       setMessage(`Total seconds: ${secondsRef.current}`);
-    }, 2000);
+    }, 3000);
+    return () => console.log('hey');
+     
   }, []);
+
+//  sin useRef, el valor del segundo setTimeout no llega al renderizado y se queda 
+// con el del primer setTimeout :
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setSeconds(1);
+  //   }, 1000);
+
+  //   setTimeout(() => {
+  //     setMessage(`Total seconds: ${seconds}`);
+  //   }, 2000);
+  // }, []);
 
   return (
     <>

@@ -1,8 +1,6 @@
 import React from "react";
 
-const useSafeState = function <T>(
-  initialValue: T
-): [T, React.Dispatch<React.SetStateAction<T>>] {
+const useSafeState = function <T>(initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>] {
   const mountedRef = React.useRef(false);
 
   const [state, setState] = React.useState<T>(initialValue);
